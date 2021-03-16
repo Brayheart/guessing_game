@@ -40,7 +40,7 @@ document.getElementById("input")
       return
     }
 
-    if(input < 0 || input > 100) {
+    if(input < 0 || input > 100 || isNaN(input)) {
       document.getElementById('warning').style.display = "block";
       document.getElementById('hint').style.display = "none"
       return
@@ -52,7 +52,7 @@ document.getElementById("input")
         document.getElementById('hint').textContent = "Guess Lower!"
         guesses--
         document.getElementById("guesses").textContent = `You have ${guesses} guesss to see if you can figure out what the random number is!`
-        document.getElementById("input").textContent = ''
+        document.getElementById("input").value = ''
       } else if (randomNum > input) {
         document.getElementById('hint').textContent = "Guess Higher!"
         guesses--
